@@ -16,6 +16,11 @@ export async function action(args: Args, options: Options) {
     return;
   }
 
+  // auto load from GITHUB_TOKEN
+  if (process.env.GITHUB_TOKEN != null) {
+    options.token = process.env.GITHUB_TOKEN;
+  }
+
   if (options?.token == null) {
     consola.error("Can not find GitHub token");
     return;
