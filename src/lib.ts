@@ -3,6 +3,7 @@ import { program } from "commander";
 import { action } from "./command";
 
 program
+  .name("changelog")
   .argument(
     "<args...>",
     "Repository and target tag or branch.\nex: tricot-inc/changelog <tag>"
