@@ -1,5 +1,5 @@
 {
-  "name": "changelog",
+  "name": "@tricot-inc/changelog",
   "version": "0.0.1",
   "description": "generate simple CHANGELOG",
   "keywords": [
@@ -21,7 +21,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "ava"
+    "test": "ava",
+    "prepublish": "build"
   },
   "dependencies": {
     "@octokit/rest": "^18.11.4",
