@@ -1,0 +1,37 @@
+{
+  "name": "changelog",
+  "version": "0.0.0",
+  "description": "generate simple CHANGELOG",
+  "keywords": [
+    "changelog"
+  ],
+  "homepage": "https://github.com/tricot-inc/changelog",
+  "bugs": {
+    "url": "https://github.com/tricot-inc/changelog/issues"
+  },
+  "repository": "ssh://git@github.com/tricot-inc/changelog.git",
+  "author": "konojunya <junya03dance@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "changelog": "./lib/bin.js"
+  },
+  "files": [
+    "lib",
+    "!lib/**/*.test.js"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "ava"
+  },
+  "dependencies": {
+    "@octokit/rest": "^18.11.4",
+    "commander": "^8.2.0",
+    "consola": "^2.15.3",
+    "dayjs": "^1.10.7"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.3",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  }
+}
