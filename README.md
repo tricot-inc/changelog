@@ -1,0 +1,2 @@
+# changelog
+Generate simple CHANGELOG
