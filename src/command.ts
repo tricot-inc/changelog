@@ -1,5 +1,6 @@
 import consola from "consola";
 import { compare, createGitHubClient } from "./github";
+import { getTokenFromOAuth } from "./oauth";
 import { generateCHANGELOG, PREFIX } from "./utils";
 
 type Args = [string, string];
@@ -22,8 +23,7 @@ export async function action(args: Args, options: Options) {
   }
 
   if (options?.token == null) {
-    consola.error("Can not find GitHub token");
-    return;
+    options.token = await getTokenFromOAuth();
   }
 
   const [orgAndRepo, target] = args;
@@ -49,4 +49,6 @@ export async function action(args: Args, options: Options) {
   });
 
   generateCHANGELOG(messages);
+
+  process.exit(0);
 }
