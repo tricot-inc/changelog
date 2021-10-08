@@ -38,13 +38,11 @@ export function getTokenFromOAuth(): Promise<string> {
   const port = process.env.PORT || 5678;
   const server = app.listen(port);
   const loginURL = `http://localhost:${port}/login`;
-  consola.log(`OAuth login with: ${loginURL}`);
 
   open(loginURL);
 
   return new Promise((resolve) => {
     emitter.on("done", () => {
-      consola.log("Success Authentication!");
       server.close((err) => {
         consola.error(err);
       });
